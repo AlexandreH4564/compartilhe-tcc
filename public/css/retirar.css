@@ -1,0 +1,65 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url(/img/retirar.jpg);
+}
+
+.msg {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    width: 450px;
+    margin-left: 120px;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.msg.hidden {
+    opacity: 0;
+    display: none;
+}
+
+.container {
+    margin-left: 90px;
+    margin-top: 120px;  
+    display: flex;
+    width: 500px;
+    height: 350px;
+    justify-content: space-between;
+}
+
+.lineA, .lineB, .lineC {
+    display: flex;
+
+}
+.form-group {
+    color: white;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    color: #12292B;
+    border-radius: 20px;
+    border: none;
+}
+
+.botao {
+    color: white;
+    background-color: rgb(213, 138, 62);
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-left: 30px;
+    height: 50px;
+    width: 460px;
+}
+
+.botao:hover {
+    background-color: #347e34;
+    transition: 1.5s;
+}

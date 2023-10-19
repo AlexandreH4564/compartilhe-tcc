@@ -1,0 +1,35 @@
+body {
+    background-image: url(/img/wall.jpg);
+}
+
+main {
+    display: flex;
+}
+
+/* 
+.overlay {
+    margin-left: auto;
+    height: 538px;
+    width: 50%;
+
+    background-image: url(/img/green.jpg);
+
+}
+
+.container {
+    margin: 0 auto;
+    background-color: rgb(31, 49, 34);;
+    height: 500px;
+    width: 500px;
+    align-items: center;
+}
+.form {
+    
+    list-style: none;
+    background-color: aqua;
+}
+.form-control {
+    font-style: none;
+    border-radius: 30px;
+    background-color: white;
+} */
