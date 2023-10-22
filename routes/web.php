@@ -21,58 +21,41 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/teste', function () {
-    return view('screens/teste');
-});
-
-
-
-// Route::resource('/Peca', '\App\Http\Controllers\PecaController')
-//     ->middleware(['auth']);
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
-
-// require __DIR__.'/auth.php';
-
-
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified' ])->group( function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
         Route::get('/newitem', function () {
         return view('screens/newitem');
-    })->name('newitem');
-    Route::get('/newdoador', function () {
-        return view('screens/newdoador');
-    })->name('newdoador');
+    })->name('newitem')->middleware(['admin']);
+    Route::get('/erro', function () {
+        return view('erro');
+    })->name('erro');
     Route::get('/retirar', function () {
         return view('screens/retirar');
-    })->name('retirar');
+    })->name('retirar')->middleware(['admin']);
     Route::get('/controle', function () {
         return view('screens/controle');
-    })->name('controle') ->middleware(['admin']);
+    })->name('controle')->middleware(['admin']);
+
 
     Route::controller(EstoqueController::class)->group(function () {
         Route::get('/estoque', 'estoque')->name('estoque');
-        Route::get('/controle', 'usuarios')->name('controle');
-        Route::delete('/controle/{id}', 'destroy')->name('controle.delete');
-
+        Route::get('/controle', 'usuarios')->name('controle')->middleware(['admin']);
+        Route::delete('/controle/{id}', 'destroy')->name('controle.delete')->middleware(['admin']);
     });
 
-
     Route::controller(DoadorController::class)->group(function () {
-        Route::post('/doador/aplicar', 'aplicarCredito')->name('doador.aplicarCredito');
-        Route::post('/doador/ver_saldo', 'verSaldo')->name('doador.verSaldo');
-        Route::post('/doador/criar_doador', 'criarDoador')->name('doador.criarDoador');
+        Route::post('/doador/aplicar', 'aplicarCredito')->name('doador.aplicarCredito') ->middleware(['admin']);
+        Route::post('/doador/ver_saldo', 'verSaldo')->name('doador.verSaldo') ->middleware(['admin']);
         Route::get('/dashboard', 'ShowSaldo')->name('dashboard');
+        Route::get('/controle/edit/{id}', 'edit')->name('controle.edit') ->middleware(['admin']);
+        Route::put('/controle/update/{id}', 'update')->name('controle.update') ->middleware(['admin']);
     });
 
     Route::controller(PecaController::class)->group(function () {
-        Route::post('/pecas/retirar', 'retirarPeca')->name('pecas.retirarPeca');
-        Route::post('/pecas/criar_peca', 'criarPeca')->name('pecas.criarPeca');
+        Route::post('/pecas/retirar', 'retirarPeca')->name('pecas.retirarPeca')->middleware(['admin']);
+        Route::post('/pecas/criar_peca', 'criarPeca')->name('pecas.criarPeca')->middleware(['admin']);
     });
-
 });
 

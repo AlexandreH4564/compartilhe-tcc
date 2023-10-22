@@ -21,7 +21,7 @@ class AdminAccess
             return $next($request);
         }
 
-        dd("Mona, você é maluca? Vaza");
+        return redirect('/erro');
     }
         
 }

@@ -4,7 +4,7 @@
 
 body {
     background-image: url(/img/wallpaper.gif);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(10px);
     background-size: cover;
     background-attachment: fixed;
 }

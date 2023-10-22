@@ -14,7 +14,7 @@ class DoadorController extends Controller
         return redirect('/controle')->with('msg', $doador[0]->total_creditos);
     }
 
-    
+
     public function showSaldo()
     {
         $user = auth()->user();
@@ -31,7 +31,7 @@ class DoadorController extends Controller
 
         $doador = User::where('email', mb_strtoupper($request->email, 'UTF-8'))->get();
 
-        if(!$doador){
+        if (!$doador) {
             return '<h1>Doador não encontrado!</h1>';
         }
 
@@ -43,20 +43,30 @@ class DoadorController extends Controller
         return redirect('/controle')->with('msg', 'Créditos aplicados com sucesso!!!');
     }
 
-    // public function criarDoador(Request $request)
-    // {
-    //     $request->validate([
-    //         'nome' => 'required|string',
-    //         'email' => 'required|string'
-    //     ]);
+    public function edit($id)
+    {
+        $user = User::find($id);
 
-    //     $obj_doador = new Doador();
-    //     $obj_doador->nome = mb_strtoupper($request->nome, 'UTF-8');
-    //     $obj_doador->email = mb_strtoupper($request->email, 'UTF-8');
-    //     $obj_doador->save();
+        return view('screens.edit', ['user' => $user]);
+    }
 
-    //     return '<h1>Doador cadastrado com sucesso!</h1>';
 
-    //     // return redirect()->route('doador.create')->with('success', 'Peça cadastrada com sucesso!');
-    // }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $id,
+        ]);
+    
+        $user = User::find($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->total_creditos = $request->input('creditos');
+        $user->access_level = $request->input('access_level');
+
+        $user->save();
+    
+        return redirect('/controle')->with('msg', 'Usuário atualizado com sucesso');
+    }
 }
