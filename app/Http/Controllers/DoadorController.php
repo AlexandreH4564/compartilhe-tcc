@@ -14,7 +14,7 @@ class DoadorController extends Controller
         return redirect('/controle')->with('msg', $doador[0]->total_creditos);
     }
 
-    // Ver saldo na tela dashbord e outras
+    
     public function showSaldo()
     {
         $user = auth()->user();

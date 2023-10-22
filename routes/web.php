@@ -56,21 +56,22 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified' 
 
     Route::controller(EstoqueController::class)->group(function () {
         Route::get('/estoque', 'estoque')->name('estoque');
+        Route::get('/controle', 'usuarios')->name('controle');
+        Route::delete('/controle/{id}', 'destroy')->name('controle.delete');
+
     });
+
 
     Route::controller(DoadorController::class)->group(function () {
         Route::post('/doador/aplicar', 'aplicarCredito')->name('doador.aplicarCredito');
         Route::post('/doador/ver_saldo', 'verSaldo')->name('doador.verSaldo');
         Route::post('/doador/criar_doador', 'criarDoador')->name('doador.criarDoador');
+        Route::get('/dashboard', 'ShowSaldo')->name('dashboard');
     });
 
     Route::controller(PecaController::class)->group(function () {
         Route::post('/pecas/retirar', 'retirarPeca')->name('pecas.retirarPeca');
         Route::post('/pecas/criar_peca', 'criarPeca')->name('pecas.criarPeca');
-    });
-
-    Route::controller(DoadorController::class)->group(function () {
-        Route::get('/dashboard', 'ShowSaldo')->name('dashboard');
     });
 
 });

@@ -1,0 +1,42 @@
+
+.grupo-formulario {
+    background-color: transparent;
+    padding: 10px;
+}
+
+.grupo-formulario i {
+    padding: 0 5px;
+    color: #527C49;
+}
+
+.campo-entrada{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    width: 70%;
+    gap: 15px;
+    padding: 3px;
+    cursor: text;
+    background-color: transparent;
+
+}
+
+.form-control {
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+    border: 2px solid #527C49 ;
+}
+.form-control::placeholder {
+    color: #527C49;
+}
+
+.form-control:focus {
+    background-color: white !important;
+    border: 2px solid #527C49 ;
+    outline: none !important;
+}
+
+.form-control:active {
+    background-color: white;
+}

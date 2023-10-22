@@ -1,25 +1,39 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
-
-
 body {
-    background-image: url(/img/controle.jpeg);
-    backdrop-filter: blur(15px);
+    background-image: url(/img/wallpaper.gif);
     background-size: cover;
     background-attachment: fixed;
+    backdrop-filter: blur(15px);  
 }
 
-div .cadastro-d-container, .saldo-d-container, .creditos-d-container {
+.saldo-d-container, .creditos-d-container {
+    display: flex;
+    margin: 80px auto;
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 130vh;
+    height: 40vh;
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.overlay {
+    background-image: url(/img/overlay11.jpg);
+    background-size: cover;
+    background-color: #254C3D;
+    width: 40%;
+    height: 100%;
+}
+
+.formulario{
+    margin: 0 auto;
     width: 50%;
-    border-radius: 10px;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: 100px;
-    padding: 30px 30px;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    height: 100%;
+    text-align: center;
+    display: block;
+    padding-top: 30px;
 }
 
 .msg {
@@ -39,24 +53,6 @@ div .cadastro-d-container, .saldo-d-container, .creditos-d-container {
     display: none;
 }
 
-.form-doador {
-    margin: 30px 0;
-
-}
-
-.form-group {
-    color: rgb(0, 0, 0);
-    margin-left: 30px;
-    margin-bottom: 20px;
-}
-
-.form-control {
-    color: #12292B;
-    border-radius: 10px;
-    width: 50%;
-    /* border: none; */
-}
-
 
 .botao {
     color: white;
@@ -71,4 +67,58 @@ div .cadastro-d-container, .saldo-d-container, .creditos-d-container {
 .botao:hover {
     background-color: #347e34;
     transition: 1.5s;
+}
+
+section.tabela {
+    background-color: rgb(248, 248, 248);
+    border-radius: 20px;
+    margin: 100px auto;
+    width: 80%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.estoque-table {
+    width: 90%;
+    border-collapse: collapse;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+ 
+.estoque-table thead {
+    height: 100px;
+    color: #222222;
+}
+
+
+.estoque-table th, .estoque-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+} 
+
+;.estoque-table td {
+    font-weight: 900;
+}
+
+.estoque-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+#edit, #delet {
+    color: white;
+    height: 5vh;
+    width: 10vh;
+    margin: 10px 0 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#edit {
+    
+    background-color: #314bbe;
+}
+
+#delet {
+    background-color: #aa1616;
 }
