@@ -23,9 +23,7 @@ class EstoqueController extends Controller
     public function destroy($id)
     {
         $usuario = User::find($id);
-
         Creditos::where('user_id', $id)->delete();
-        
         $usuario->delete();
 
         return redirect('/controle')->with('msg', 'Usuario deletado com sucesso!!!');

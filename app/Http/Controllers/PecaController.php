@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\DB;
 class PecaController extends Controller
 {
 
+
+    /*  */
     public function criarPeca(Request $request)
     {
         $request->validate([
@@ -56,8 +58,6 @@ class PecaController extends Controller
         ]);
         $doador[0]->save();
 
-
-        // return '<h1>Peça cadastrada com sucesso!</h1>';
         return redirect('/newitem')->with('msg', 'Peça cadastrada com sucesso!!');
     }
 
