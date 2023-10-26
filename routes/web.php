@@ -42,7 +42,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified' 
         return view('screens/controle');
     })->name('controle')->middleware(['admin']);
 
-
     Route::controller(EstoqueController::class)->group(function () {
         Route::get('/estoque', 'estoque')->name('estoque');
         Route::get('/controle', 'usuarios')->name('controle')->middleware(['admin']);
