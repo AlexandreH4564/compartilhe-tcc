@@ -78,7 +78,7 @@
                 <div id="logo">
                     <img src="img/logo.svg" alt="logo">
                 </div>
-                <img src="img/vetor.svg" alt="vetor">
+                <img src="img/vetor2.svg" alt="vetor">
             </div>
         </section>
 

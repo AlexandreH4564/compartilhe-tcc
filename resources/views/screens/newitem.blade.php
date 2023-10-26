@@ -41,7 +41,7 @@
                 <div id="logo">
                     <img src="img/logo.svg" alt="logo">
                 </div>
-                <img src="img/vetor1.svg" alt="vetor">
+                <img src="img/vetor.svg" alt="vetor">
             </div>
 
 
