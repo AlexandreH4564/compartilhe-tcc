@@ -6,7 +6,7 @@ use App\Models\Creditos;
 use App\Models\User;
 use App\Models\Peca;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB; 
+use Illuminate\Support\Facades\DB;
 
 class PecaController extends Controller
 {
@@ -69,27 +69,62 @@ class PecaController extends Controller
             'valor_retirar' => 'required|integer'
         ]);
 
-        $peca = Peca::where('codigo', strtoupper($request->codigo))->get();
+        $peca = Peca::where('codigo', strtoupper($request->codigo))->first();
 
         if (!$peca) {
-            return '<h1>Peça não encontrada!</h1>';
+            return redirect('/retirar')->with('erro', 'Essa peça não se encontra no acervo!');
         }
 
-        $doador = User::where('email', mb_strtoupper($request->email_retirar, 'UTF-8'))->get();
+        $doador = User::where('email', mb_strtoupper($request->email_retirar, 'UTF-8'))->first();
 
         if (!$doador) {
-            return '<h1>Doador não encontrado!</h1>';
+            return redirect('/retirar')->with('erro', 'Esse contribuidor não foi encontrado!');
         }
 
-        Peca::destroy($peca[0]->id);
+        if ($doador->total_creditos < $request->valor_retirar) {
+            return redirect('/retirar')->with('erro', 'Créditos insuficientes para retirar esta peça.');
+        }
 
-        $doador[0]->fill([
-            'total_creditos' => ($doador[0]->total_creditos - $request->valor_retirar),
-            'creditos_usados' => ($doador[0]->creditos_usados + $request->valor_retirar),
-        ]);
-        $doador[0]->save();
+        Peca::destroy($peca->id);
+
+        $doador->total_creditos -= $request->valor_retirar;
+        $doador->creditos_usados += $request->valor_retirar;
+        $doador->save();
 
         return redirect('/retirar')->with('msg', 'Peça retirada com sucesso!!');
     }
 
+
+    // public function retirarPeca(Request $request)
+    // {
+    //     $request->validate([
+    //         'codigo' => 'required|string',
+    //         'email_retirar' => 'required|string',
+    //         'valor_retirar' => 'required|integer'
+    //     ]);
+
+    //     $peca = Peca::where('codigo', strtoupper($request->codigo))->get();
+
+    //     if ($peca->isEmpty()) {
+    //         return redirect('/retirar')->with('erro', 'Essa peça não se encontra no acervo!');
+    //     }
+
+    //     $doador = User::where('email', mb_strtoupper($request->email_retirar, 'UTF-8'))->get();
+
+    //     if ($doador->isEmpty()) {
+    //         return redirect('/retirar')->with('erro', 'Esse contribuidor não foi encontrado!');
+    //     }
+
+    //     Peca::destroy($peca[0]->id);
+
+    //     if (!$doador->isEmpty()) {
+    //         $doador[0]->fill([
+    //             'total_creditos' => ($doador[0]->total_creditos - $request->valor_retirar),
+    //             'creditos_usados' => ($doador[0]->creditos_usados + $request->valor_retirar),
+    //         ]);
+    //         $doador[0]->save();
+    //     }
+
+    //     return redirect('/retirar')->with('msg', 'Peça retirada com sucesso!!');
+    // }
 }

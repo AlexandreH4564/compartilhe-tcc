@@ -15,3 +15,20 @@
     opacity: 0;
     display: none;
 }
+
+.erro {
+    background-color: #ecb0b0;
+    color: #a12a2a;
+    border: 1px solid #ecb0b0;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.erro.hidden {
+    opacity: 0;
+    display: none;
+}
