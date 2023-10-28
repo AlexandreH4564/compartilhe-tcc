@@ -1,3 +1,64 @@
+/* Space Styles: "Formulario" */
+.formulario{
+    margin: 0 auto;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    display: block;
+    padding: 50px 0;
+}
+
+.form-retirar{
+    margin: 100px auto;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    display: block;
+    padding-top: 30px;
+}
+
+
+#titulo {
+    margin-bottom: 10px;
+    color: #527C49;;
+    font-size: 3.5vh;
+    font-weight: 580;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+
+/* Space Styles: "Botões" */
+.linha-botoes {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+.botao, .botao-file {
+    border-radius: 15px;
+    color: #fff;
+    background-color: #527C49;
+    width: 18vh;
+    height: 5.0vh;
+}
+
+.botao-file:hover {
+    background-color: #d58a3e;
+    transition: 0.5s;
+}
+.botao:hover {
+    background-color: #314bbe;
+    transition: 0.5s;
+
+}
+
+
+
 
 .grupo-formulario {
     background-color: transparent;

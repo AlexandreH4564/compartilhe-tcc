@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+@extends('layouts.master')
 
-    
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
-    <!-- Styles -->
-    @livewireStyles
+@section('title', 'Acervo')
 
-    <link rel="stylesheet" href="css/estoque.css">
-    <title>Estoque</title>
-
-    <div class="min-h-screen">
-        @livewire('navigation-menu')
-
-        
+@section('content')
     <section class="tabela">
         <table class="estoque-table">
             <thead>
@@ -35,10 +16,11 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($estoque as $peca)
+                @foreach ($estoque as $peca)
                     <tr>
                         <td>
-                            <img src="{{ asset('img/pecas/' . $peca->image) }}"  alt="{{ $peca->image }}" width="100" height="100"class="foto">
+                            <img src="{{ asset('img/pecas/' . $peca->image) }}" alt="{{ $peca->image }}" width="100"
+                                height="100"class="foto">
                         </td>
                         <td>{{ $peca->codigo }}</td>
 
@@ -51,4 +33,4 @@
             </tbody>
         </table>
     </section>
-    
+@endsection

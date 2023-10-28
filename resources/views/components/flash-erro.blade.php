@@ -4,7 +4,6 @@
             @if (session('erro'))
                 <p class="erro" id="msg">{{ session('erro') }}</p>
             @endif
-            @yield('content')
         </div>
     </div>
 </div>
