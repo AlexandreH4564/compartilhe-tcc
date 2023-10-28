@@ -69,4 +69,15 @@ class DoadorController extends Controller
     
         return redirect('/controle')->with('msg', 'Usuário atualizado com sucesso');
     }
+
+
+    // Não irei alterar nada nessa bomba por enquanto, o que importa é estar funcionando :0
+    public function rankingUsers(Request $request) {
+        $users = User::select('name', User::raw('total_creditos + creditos_usados as credits'))
+            ->orderBy('credits', 'desc')
+            ->get();
+    
+        return view('screens.ranking', compact('users'));
+    }
+    
 }

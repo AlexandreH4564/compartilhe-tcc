@@ -93,38 +93,4 @@ class PecaController extends Controller
 
         return redirect('/retirar')->with('msg', 'Peça retirada com sucesso!!');
     }
-
-
-    // public function retirarPeca(Request $request)
-    // {
-    //     $request->validate([
-    //         'codigo' => 'required|string',
-    //         'email_retirar' => 'required|string',
-    //         'valor_retirar' => 'required|integer'
-    //     ]);
-
-    //     $peca = Peca::where('codigo', strtoupper($request->codigo))->get();
-
-    //     if ($peca->isEmpty()) {
-    //         return redirect('/retirar')->with('erro', 'Essa peça não se encontra no acervo!');
-    //     }
-
-    //     $doador = User::where('email', mb_strtoupper($request->email_retirar, 'UTF-8'))->get();
-
-    //     if ($doador->isEmpty()) {
-    //         return redirect('/retirar')->with('erro', 'Esse contribuidor não foi encontrado!');
-    //     }
-
-    //     Peca::destroy($peca[0]->id);
-
-    //     if (!$doador->isEmpty()) {
-    //         $doador[0]->fill([
-    //             'total_creditos' => ($doador[0]->total_creditos - $request->valor_retirar),
-    //             'creditos_usados' => ($doador[0]->creditos_usados + $request->valor_retirar),
-    //         ]);
-    //         $doador[0]->save();
-    //     }
-
-    //     return redirect('/retirar')->with('msg', 'Peça retirada com sucesso!!');
-    // }
 }

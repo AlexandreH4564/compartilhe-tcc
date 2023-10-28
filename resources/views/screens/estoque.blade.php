@@ -27,7 +27,6 @@
             <thead>
                 <tr>
                     <th>Imagem</th>
-                  
                     <th>Codigo</th>
                     <th>Tipo</th>
                     <th>Cor</th>

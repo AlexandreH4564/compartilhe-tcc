@@ -54,6 +54,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified' 
         Route::get('/dashboard', 'ShowSaldo')->name('dashboard');
         Route::get('/controle/edit/{id}', 'edit')->name('controle.edit') ->middleware(['admin']);
         Route::put('/controle/update/{id}', 'update')->name('controle.update') ->middleware(['admin']);
+        Route::get('/ranking', 'rankingUsers')->name('ranking');
     });
 
     Route::controller(PecaController::class)->group(function () {

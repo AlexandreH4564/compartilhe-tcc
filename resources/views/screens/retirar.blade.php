@@ -27,7 +27,10 @@
     <div class="min-h-screen">
         @livewire('navigation-menu')
 
-        <div class="container-fluid">
+        <x-flash-message/>
+        <x-flash-erro/>
+
+        {{-- <div class="container-fluid">
             <div class="row">
                 @if (session('erro'))
                     <p class="erro" id="msg">{{ session('erro') }}</p>
@@ -42,7 +45,7 @@
                 @endif
                 @yield('content')
             </div>
-        </div>
+        </div> --}}
 
         <section class="container-form">
 
