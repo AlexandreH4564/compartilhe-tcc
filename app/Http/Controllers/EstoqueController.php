@@ -14,6 +14,15 @@ class EstoqueController extends Controller
         return view('screens.estoque', ['estoque' => $estoque]);
     }
 
+    public function displayVitrine()
+    {
+        $vitrine = Peca::inRandomOrder()
+            ->limit(10)->get();
+    
+        return view('welcome', compact('vitrine'));
+    }
+    
+
     public function usuarios()
     {
         $contribuidores = User::select('id', 'name', 'email', 'total_creditos', 'access_level')->get();
@@ -28,6 +37,4 @@ class EstoqueController extends Controller
 
         return redirect('/controle')->with('msg', 'Usuario deletado com sucesso!!!');
     }
-
-
 }

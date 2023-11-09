@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* RESET DE ESTILOS */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Dosis", sans-serif;
+}
+
+section {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --rosa-one: #feaea7;
+    --amarelo-one: #b27b2b;
+    --verde-one: #085751;
+    --verde-two: #182b2f;
+}
+
+/* =================================== */
+/* ESTILOS PRIMEIRA TELA (BOAS-VINDAS) */
+
+.tela-inicial {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/img/indo.svg);
+    backdrop-filter: blur(15px);
+    background-size: cover;
+}
+
+.container-home {
+    margin: 0 auto;
+    width: 85vh;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+#titulo {
+    color: #feaea7;
+    font-size: 10vh;
+}
+
+#subtitulo {
+    background-color: var(--amarelo-one);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 3vh;
+    margin-bottom: 50px;
+    border-radius: 25px;
+    padding: 0 25px;
+}
+
+.btn-log {
+    background-color: transparent;
+    border: 3px solid #b27b2b;
+    color: white;
+    width: 25vh;
+    height: 6vh;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+.btn-log:hover {
+    background-color: var(--amarelo-one);
+    transition: 1s;
+}
+
+.circle-btn {
+    background-color: transparent;
+    height: 8vh;
+    width: 8vh;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--amarelo-one);
+    cursor: pointer;
+}
+
+.circle-btn:hover {
+    color: white;
+    background-color: var(--amarelo-one);
+    transition: 1s;
+}
+
+#circle-btn-I {
+    margin: 0 auto;
+}
+
+/* ============================== */
+/* ESTILOS SEGUNDA TELA (VITRINE) */
+
+.tela-vitrine {
+    width: 100%;
+    height: 110vh;
+    background: rgb(24,43,47);
+    background: linear-gradient(0deg, rgba(24,43,47,1) 0%, rgba(8,87,81,1) 50%, rgba(24,43,47,1) 100%);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.cards-vit {
+    display: flex;
+    overflow: hidden;
+}
+
+.card-vit {
+    color: var(--rosa-one);
+    width: 130vh;
+    height: 80vh;
+    margin: 10px;
+    background-image: url(/img/indo.svg);
+    background-size: cover;
+    border: 3px solid var(--amarelo-one);
+    border-radius: 25px;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.image-vit {
+    border-radius: 20px;
+    border: 3px solid var(--amarelo-one);
+    width: 60vh;
+    height: 70vh;
+    margin: 40px;
+}
+
+.image-vit img {
+    border-radius: 17px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-vit {
+    width: 50vh;
+    height: 50vh;
+    margin: auto auto;
+}
+
+.text-vit {
+    font-weight: 100;
+    margin: 30px 0;
+    padding: 5px 0 5px 10px;
+    width: 40vh;
+    border: 3px solid var(--rosa-one);
+}
+
+/* ================================== */
+/* ESTILOS TERCEIRA TELA (CARDS INFO) */
+
+.tela-III {
+
+    width: 100%;
+    height: 110vh;
+    background-image: url(/img/indo.svg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards-section {
+    display: flex;
+}
+
+.cards {
+    background-color: transparent;
+    backdrop-filter: blur(15px);
+    height: 40vh;
+    width: 35vh;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    border: 3px solid var(--amarelo-one);
+    transition: 0.5s;
+}
+
+.cards:nth-child(2n) {
+    border: 3px solid var(--rosa-one);
+    margin-top: 2rem;
+}
+
+.cards:hover {
+    transform: translateY(-20px);
+}
+
+.cards p {
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    font-weight: 300;
+}
+
+.barra {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.barra strong {
+    color: white;
+    font-size: 3vh;
+    font-weight: 100;
+}
+
+.barra i {
+    color: white;
+    margin: 5px 10px 5px 10px;
+}
+
+.barra img {
+    margin: 0 10px 0 10px;
+}
+
+
+/* ================================= */
+/* ESTILOS TELA FOOTER (FOOTER INFO) */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    background-color: #085751;
+
+    height: 20vh;
+    color: var(--rosa-one);
+}
+
+.redes-footer {
+    display: flex;
+}
+
+.redes {
+    background-color: var(--rosa-one);
+    height: 8vh;
+    width: 8vh;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 30px 10px 0;
+}
+
+.redes img {
+    width: 50px;
+}
+
+.redes i {
+    color: #085751;
+}
+
+/* ======================== */
+/* ESTILOS BARRA DE ROLAGEM */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

@@ -21,9 +21,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/teste', function () {
-    return view('screens/teste');
+
+Route::controller(EstoqueController::class)->group(function () {
+    Route::get('/', 'displayVitrine')->name('vitrine');
 });
+
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified' ])->group( function () {
     Route::get('/dashboard', function () {

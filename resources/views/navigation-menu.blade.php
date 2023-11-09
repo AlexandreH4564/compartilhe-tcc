@@ -35,11 +35,11 @@
 
 
                     {{-- teste permissão --}}
-                    @can('navbar')
+                    {{-- @can('navbar')
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Carbon Credit') }}
                     </x-nav-link> 
-                    @endcan
+                    @endcan --}}
 
 
                 </div>
