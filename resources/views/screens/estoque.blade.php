@@ -12,7 +12,7 @@
                     <th>Tipo</th>
                     <th>Cor</th>
                     <th>Material</th>
-                    <!-- Adicione outras colunas conforme necessário -->
+                    <th>Descrição</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,7 +27,7 @@
                         <td>{{ $peca->tipo }}</td>
                         <td>{{ $peca->cor }}</td>
                         <td>{{ $peca->material }}</td>
-                        <!-- Adicione outras colunas conforme necessário -->
+                        <td>{{ $peca->descricao }}</td>
                     </tr>
                 @endforeach
             </tbody>

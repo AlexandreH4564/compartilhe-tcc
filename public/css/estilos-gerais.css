@@ -6,7 +6,7 @@
 
 }
 body {
-    background-image: url(/img/wallpaper.gif);
+    background-image: url(/img/background.svg);
     background-size: cover;
     background-attachment: fixed;
     backdrop-filter: blur(10px); 

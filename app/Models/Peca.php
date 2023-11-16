@@ -11,5 +11,5 @@ class Peca extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['id', 'tipo', 'codigo', 'cor', 'material', 'image'];
+    protected $fillable = ['id', 'tipo', 'codigo', 'cor', 'material', 'image', 'descricao'];
 }

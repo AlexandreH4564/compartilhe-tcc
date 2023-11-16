@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('tipo');
             $table->string('codigo');
             $table->string('material');
+            $table->string('descricao');
             $table->string('image');
             $table->softDeletes();
             $table->timestamps();

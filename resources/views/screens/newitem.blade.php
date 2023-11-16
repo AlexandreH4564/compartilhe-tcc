@@ -13,7 +13,7 @@
         </div>
 
         <div class="formulario">
-            <h1 id="titulo">Cadastre uma nova peça!</h1>
+            {{-- <h1 id="titulo">Cadastre uma nova peça!</h1> --}}
             <form action="{{ route('pecas.criarPeca') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="grupo-formulario">
@@ -54,6 +54,14 @@
                             <i class="fa-solid fa-envelope fa-xl"></i>
                             <input type="email" name="email_doador" class="form-control"
                                 placeholder="Email do contribuidor" required>
+                        </div>
+                    </label>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="descricao">
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-pencil fa-2xl"></i>
+                            <input type="text" name="descricao" class="form-control" placeholder="Descrição" required>
                         </div>
                     </label>
                 </div>

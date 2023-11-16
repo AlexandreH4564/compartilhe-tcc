@@ -21,6 +21,7 @@ class PecaController extends Controller
             'material' => 'required|string',
             'email_doador' => 'required|string',
             'creditos' => 'required|integer',
+            'descricao' => 'required|string'
         ]);
 
         $peca = new Peca();
@@ -28,6 +29,7 @@ class PecaController extends Controller
         $peca->tipo = mb_strtoupper($request->tipo, 'UTF-8');
         $peca->material = mb_strtoupper($request->material, 'UTF-8');
         $peca->codigo = mb_strtoupper($request->codigo, 'UTF-8');
+        $peca->descricao = mb_strtoupper($request->descricao, 'UTF-8');
 
         //Imagem
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
