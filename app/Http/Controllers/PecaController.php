@@ -11,8 +11,6 @@ use Illuminate\Support\Facades\DB;
 class PecaController extends Controller
 {
 
-
-    /*  */
     public function criarPeca(Request $request)
     {
         $request->validate([
@@ -24,6 +22,10 @@ class PecaController extends Controller
             'descricao' => 'required|string'
         ]);
 
+        if (Peca::where('codigo', mb_strtoupper($request->codigo, 'UTF-8'))->exists()) {
+            return redirect('/newitem')->with('erro', 'O código da peça já existe. Por favor, escolha outro código.');
+        }
+
         $peca = new Peca();
         $peca->cor = mb_strtoupper($request->cor, 'UTF-8');
         $peca->tipo = mb_strtoupper($request->tipo, 'UTF-8');
@@ -31,7 +33,6 @@ class PecaController extends Controller
         $peca->codigo = mb_strtoupper($request->codigo, 'UTF-8');
         $peca->descricao = mb_strtoupper($request->descricao, 'UTF-8');
 
-        //Imagem
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $requestImage = $request->image;
             $extension = $requestImage->getClientOriginalExtension();
@@ -41,7 +42,6 @@ class PecaController extends Controller
 
             $peca->image = $imageName;
         }
-
 
         $peca->save();
 

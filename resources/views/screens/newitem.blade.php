@@ -13,7 +13,7 @@
         </div>
 
         <div class="formulario">
-            {{-- <h1 id="titulo">Cadastre uma nova peça!</h1> --}}
+
             <form action="{{ route('pecas.criarPeca') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="grupo-formulario">
@@ -49,6 +49,14 @@
                     </label>
                 </div>
                 <div class="grupo-formulario">
+                    <label for="descricao">
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-pencil fa-xl"></i>
+                            <input type="text" name="descricao" class="form-control" placeholder="Descrição" required>
+                        </div>
+                    </label>
+                </div>
+                <div class="grupo-formulario">
                     <label for="email_doador">
                         <div class="campo-entrada">
                             <i class="fa-solid fa-envelope fa-xl"></i>
@@ -57,14 +65,7 @@
                         </div>
                     </label>
                 </div>
-                <div class="grupo-formulario">
-                    <label for="descricao">
-                        <div class="campo-entrada">
-                            <i class="fa-solid fa-pencil fa-2xl"></i>
-                            <input type="text" name="descricao" class="form-control" placeholder="Descrição" required>
-                        </div>
-                    </label>
-                </div>
+
                 <div class="grupo-formulario">
                     <label for="creditos">
                         <div class="campo-entrada">
@@ -79,7 +80,7 @@
                         <input type="file" id="file" name="image" required>
                         <button type="button" class="botao-file" onclick="acionarInput()">Imagem</button>
                     </div>
-                    <div class="btn">
+                    <div class="btn-submit">
                         <button type="submit" class="botao">Cadastrar</button>
                     </div>
                 </div>

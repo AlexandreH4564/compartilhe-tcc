@@ -17,7 +17,7 @@
                     <tr>
                         <td>
                             @if ($key == 0)
-                                1º lugar
+                                O Maioral
                             @elseif ($key == 1)
                                 2º lugar
                             @elseif ($key == 2)

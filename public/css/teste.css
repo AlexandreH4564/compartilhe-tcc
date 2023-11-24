@@ -179,7 +179,7 @@ a {
 .tela-III {
 
     width: 100%;
-    height: 110vh;
+    height: 100vh;
     background-image: url(/img/background.svg);
     background-size: cover;
     display: flex;
@@ -251,7 +251,7 @@ footer {
     align-items: center;
     justify-content: center;
     font-family: "Poppins", sans-serif;
-    background-color: #085751;
+    background-color: #182b2f;
 
     height: 20vh;
     color: var(--rosa-one);

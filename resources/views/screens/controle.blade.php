@@ -3,37 +3,14 @@
 @section('title', 'Controle')
 
 @section('content')
-    <section class="saldo-d-container">
-        <div class="overlay-quadrado">
-
-        </div>
-        <div class="formulario">
-            <form action="{{ route('doador.verSaldo') }}" method="POST">
-                @csrf
-
-                <div class="grupo-formulario">
-                    <label for="email">
-                        <div class="campo-entrada">
-                            <i class="fa-solid fa-envelope fa-xl"></i>
-                            <input type="email" name="email" class="form-control" placeholder="Email do contribuidor"
-                                required>
-                        </div>
-                    </label>
-                </div>
-
-                <div class="btn">
-                    <button type="submit" class="botao">Verificar</button>
-                </div>
-            </form>
-
-        </div>
-    </section>
+   
 
     <section class="creditos-d-container">
         <div class="overlay-quadrado">
 
         </div>
         <div class="formulario">
+            <h1 id="titulo-controle">Aplicar Créditos!</h1>
             <form action="{{ route('doador.aplicarCredito') }}" method="POST">
                 @csrf
 
@@ -63,6 +40,33 @@
             </form>
         </div>
 
+    </section>
+
+    <section class="saldo-d-container">
+        <div class="overlay-quadrado">
+
+        </div>
+        <div class="formulario">
+            <h1 id="titulo-controle">Verificar Créditos!</h1>
+            <form action="{{ route('doador.verSaldo') }}" method="POST">
+                @csrf
+
+                <div class="grupo-formulario">
+                    <label for="email">
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-envelope fa-xl"></i>
+                            <input type="email" name="email" class="form-control" placeholder="Email do contribuidor"
+                                required>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="btn">
+                    <button type="submit" class="botao">Verificar</button>
+                </div>
+            </form>
+
+        </div>
     </section>
 
     <section class="tabela">

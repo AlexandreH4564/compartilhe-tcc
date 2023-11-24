@@ -6,20 +6,31 @@
 
 }
 body {
-    background-image: url(/img/background.svg);
+    background-image: url(/img/wallpaper.gif);
     background-size: cover;
     background-attachment: fixed;
     backdrop-filter: blur(10px); 
     
     
 }
+header {
+    display: flex;
+    width: 100%;
+    height: 9vh;
+    background-color: white;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30vh;
+    margin-bottom: 100vh;
+}
+
 .container-form {
     display: flex;
-    margin: 80px auto;
+    margin: 50px auto;
     background-color: #ffffff;
     border-radius: 15px;
     width: 130vh;
-    height: 76vh;
+    height: 80vh;
     overflow: hidden;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
  }
@@ -30,6 +41,8 @@ body {
     width: 40%;
     height: 100%;
 }
+
+
 
 #logo {
     margin-top: 30px;
@@ -56,7 +69,10 @@ body {
     width: 40%;
     height: 100%;
 }
-
+#titulo-controle {
+    font-size: 2.5vh;
+    color: #527C49;
+}
 /* ESTILOS TABELAS  */
 
 
