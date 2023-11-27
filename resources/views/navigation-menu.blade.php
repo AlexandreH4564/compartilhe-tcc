@@ -22,13 +22,18 @@
                     <x-nav-link href="{{ route('retirar') }}" :active="request()->routeIs('retirar')">
                         {{ __('Retirar Peça') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('controle') }}" :active="request()->routeIs('controle')">
-                        {{ __('Controle') }}
-                    </x-nav-link>
                     @endcan
                     <x-nav-link href="{{ route('estoque') }}" :active="request()->routeIs('estoque')">
                         {{ __('Estoque') }}
                     </x-nav-link>
+                    @can('navbar')
+                    <x-nav-link href="{{ route('pedidos') }}" :active="request()->routeIs('pedidos')">
+                        {{ __('Pedidos') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('controle') }}" :active="request()->routeIs('controle')">
+                        {{ __('Controle') }}
+                    </x-nav-link>
+                    @endcan
                     <x-nav-link href="{{ route('ranking') }}" :active="request()->routeIs('ranking')">
                         {{ __('Ranking') }}
                     </x-nav-link>

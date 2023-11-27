@@ -13,6 +13,7 @@
                     <th>Cor</th>
                     <th>Material</th>
                     <th>Descrição</th>
+                    <th>Solicitar</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,11 +24,23 @@
                                 height="100"class="foto">
                         </td>
                         <td>{{ $peca->codigo }}</td>
-
                         <td>{{ $peca->tipo }}</td>
                         <td>{{ $peca->cor }}</td>
                         <td>{{ $peca->material }}</td>
                         <td>{{ $peca->descricao }}</td>
+                        <td>
+
+                            <form method="POST" action="{{ route('pedido.solicitar') }}">
+                                @csrf
+                                <input type="hidden" name="codigo" value="{{ $peca->codigo }}">
+                                <input type="hidden" name="usuario_email" value="{{ auth()->user()->email }}">
+                                <input type="hidden" name="total_creditos" value="{{ auth()->user()->total_creditos }}">
+                                <button type="submit" id="request"> 
+                                    <i class="fa-solid fa-bag-shopping fa-lg" style="color: #ffffff;"></i>
+                                    Solicitar Peça
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

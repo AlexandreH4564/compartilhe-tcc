@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Creditos;
 use App\Models\User;
 use App\Models\Peca;
+use App\Models\Pedido;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -88,6 +89,8 @@ class PecaController extends Controller
         }
 
         Peca::destroy($peca->id);
+
+        Pedido::where('codigo', strtoupper($request->codigo))->delete();
 
         $doador->total_creditos -= $request->valor_retirar;
         $doador->creditos_usados += $request->valor_retirar;
